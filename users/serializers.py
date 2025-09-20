@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework_gis.serializers import GeoFeatureModelSerializer
 from .models import User
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
@@ -67,3 +68,12 @@ class LogoutSerializer(serializers.Serializer):
         except TokenError:
             self.fail('bad_token')
 
+
+class UserLocationSerializer(GeoFeatureModelSerializer):
+    """
+    A serializer to convert User model instances into GeoJSON Feature objects.
+    """
+    class Meta:
+        model = User
+        geo_field = "location" 
+        fields = ('id',)
