@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+*.log
+local_settings.py
+
+venv/
+.env
+
+.idea/
+.vscode/
