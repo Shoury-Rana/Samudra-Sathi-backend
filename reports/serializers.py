@@ -38,3 +38,23 @@ class CleanedReportSerializer(GeoFeatureModelSerializer):
         model = CleanedReport
         geo_field = 'locations'
         fields = '__all__'
+
+# --- GeoJSON Serializers for Map Views ---
+
+class ReportedLocationSerializer(GeoFeatureModelSerializer):
+    """
+    A lean serializer to convert Reported model instances into GeoJSON Feature objects.
+    """
+    class Meta:
+        model = Reported
+        geo_field = "location"
+        fields = ('id', 'source')
+
+class CleanedReportLocationSerializer(GeoFeatureModelSerializer):
+    """
+    A lean serializer to convert CleanedReport model instances into GeoJSON Feature objects.
+    """
+    class Meta:
+        model = CleanedReport
+        geo_field = "locations"
+        fields = ('id', 'hazard_type', 'severity', 'verified')
