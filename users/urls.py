@@ -1,5 +1,10 @@
 from django.urls import path
-from .views import UserRegisterView, LogoutView, UserLocationsView
+from .views import (
+    UserRegisterView, 
+    LogoutView, 
+    UserLocationsView, 
+    UserDensityView
+)
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -12,4 +17,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     
     path('locations/', UserLocationsView.as_view(), name='user-locations'),
+    path('locations/density/', UserDensityView.as_view(), name='user-density'),
 ]
