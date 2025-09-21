@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from rest_framework_gis.serializers import GeoFeatureModelSerializer
+from rest_framework_gis.serializers import GeoFeatureModelSerializer, GeometryField
 from django.contrib.gis.geos import Point
 from .models import Reported, CleanedReport
+
 
 class ReportedSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.email')
@@ -33,13 +34,46 @@ class ReportedSerializer(serializers.ModelSerializer):
         report.save()
         return report
 
-class CleanedReportSerializer(GeoFeatureModelSerializer):
+    def update(self, instance, validated_data):
+        location_data = validated_data.pop('location', None)
+
+        # Manually handle the location update
+        if location_data:
+            try:
+                instance.location = Point(location_data['lng'], location_data['lat'], srid=4326)
+            except (KeyError, TypeError):
+                raise serializers.ValidationError("Invalid location format. Expected {'lat': ..., 'lng': ...}")
+        
+        return super().update(instance, validated_data)
+
+
+class UnwrappingGeometrySerializerMixin:
+    """
+    A mixin for GeoFeatureModelSerializer that unwraps a GeometryCollection
+    if it contains only a single geometry, returning that geometry directly.
+    This adheres to GeoJSON best practices.
+    """
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        
+        geo_field_name = self.Meta.geo_field
+        geom_collection = getattr(instance, geo_field_name)
+
+        if geom_collection and geom_collection.geom_type == 'GeometryCollection' and len(geom_collection) == 1:
+            single_geom = geom_collection[0]
+            
+            geom_serializer = GeometryField()
+            representation['geometry'] = geom_serializer.to_representation(single_geom)
+        
+        return representation
+
+
+class CleanedReportSerializer(UnwrappingGeometrySerializerMixin, GeoFeatureModelSerializer):
     class Meta:
         model = CleanedReport
         geo_field = 'locations'
         fields = '__all__'
 
-# --- GeoJSON Serializers for Map Views ---
 
 class ReportedLocationSerializer(GeoFeatureModelSerializer):
     """
@@ -50,7 +84,8 @@ class ReportedLocationSerializer(GeoFeatureModelSerializer):
         geo_field = "location"
         fields = ('id', 'source')
 
-class CleanedReportLocationSerializer(GeoFeatureModelSerializer):
+
+class CleanedReportLocationSerializer(UnwrappingGeometrySerializerMixin, GeoFeatureModelSerializer):
     """
     A lean serializer to convert CleanedReport model instances into GeoJSON Feature objects.
     """

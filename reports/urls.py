@@ -14,11 +14,11 @@ router.register(r'incidents', ReportedViewSet, basename='reported')
 router.register(r'cleaned-incidents', CleanedReportViewSet, basename='cleanedreport')
 
 urlpatterns = [
-    path('', include(router.urls)),
-
     path('incidents/locations/', ReportedLocationsView.as_view(), name='reported-locations'),
     path('incidents/density/', ReportedDensityView.as_view(), name='reported-density'),
     
     path('cleaned-incidents/locations/', CleanedReportLocationsView.as_view(), name='cleanedreport-locations'),
     path('cleaned-incidents/density/', CleanedReportDensityView.as_view(), name='cleanedreport-density'),
+
+    path('', include(router.urls)),
 ]
