@@ -7,7 +7,7 @@ class Reported(models.Model):
     Model to store raw reports submitted by users.
     """
     report = models.TextField()
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='reports')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='reports', null=True, blank=True)
     is_marked = models.BooleanField(default=False)
     reported_at = models.DateTimeField(default=timezone.now)
     location = models.PointField(srid=4326, null=True, blank=True)
