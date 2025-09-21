@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samudra Sathi API Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        h1, h2, h3, h4 {
+            color: #212529;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.5rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .endpoint {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .endpoint-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .method {
+            padding: 5px 12px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .method.post { background-color: #28a745; }
+        .method.get { background-color: #007bff; }
+        .method.put, .method.patch { background-color: #ffc107; color: #333; }
+        .method.delete { background-color: #dc3545; }
+
+        code, pre {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9rem;
+        }
+        .endpoint-header code {
+            font-size: 1.1rem;
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 5px;
+            word-break: break-all;
+        }
+        pre {
+            background-color: #f1f3f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid #ced4da;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .alert-info {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+        }
+        #toc {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            margin-bottom: 30px;
+        }
+        #toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        #toc ul li {
+            margin-bottom: 10px;
+        }
+        #toc ul ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        #toc a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        #toc a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            font-style: italic;
+            color: #6c757d;
+            border-left: 3px solid #6c757d;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Samudra Sathi API Documentation</h1>
+            <p style="text-align:center;">This document provides a complete guide to the Samudra Sathi REST API, covering authentication, reporting, and geospatial endpoints.</p>
+            <p style="text-align:center;"><strong>Base URL:</strong> <code>https://your-domain.com/api/</code></p>
+        </header>
+
+        <nav id="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#section-notes">Important Notes for Teams</a></li>
+                <li><a href="#section-auth">Authentication & User Management</a>
+                    <ul>
+                        <li><a href="#user-register">User Registration</a></li>
+                        <li><a href="#user-login">User Login</a></li>
+                        <li><a href="#user-refresh">Refresh Access Token</a></li>
+                        <li><a href="#user-logout">User Logout</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-raw-reports">Raw Incident Reporting</a>
+                    <ul>
+                        <li><a href="#create-raw-report">Create a Raw Report</a></li>
+                        <li><a href="#list-raw-reports">List User's Raw Reports</a></li>
+                        <li><a href="#manage-raw-report">Retrieve/Update/Delete a Raw Report</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-cleaned-reports">Cleaned Incident Data</a>
+                    <ul>
+                        <li><a href="#create-cleaned-report">Create a Cleaned Report</a></li>
+                        <li><a href="#list-cleaned-reports">List All Cleaned Reports</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-geo">Geospatial & Map Data</a>
+                    <ul>
+                        <li><a href="#get-raw-locations">Get Raw Report Locations</a></li>
+                        <li><a href="#get-cleaned-locations">Get Cleaned Report Locations</a></li>
+                        <li><a href="#get-heatmap">Get Heatmap Density Data</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="section-notes">
+            <h2>Important Notes for Teams</h2>
+            <div class="alert alert-danger">
+                <h4><span style="color: #dc3545;">!!</span> CRITICAL SECURITY VULNERABILITIES (ACTION REQUIRED)</h4>
+                <ol>
+                    <li><strong>Cleaned Reports Endpoint is Insecure:</strong> The <code>/api/reports/cleaned-incidents/</code> endpoint is currently accessible by <strong>any authenticated user</strong>. This means any user can create, modify, or delete official cleaned data. This permission must be restricted on the backend immediately.</li>
+                    <li><strong>User Location Privacy Leak:</strong> The <code>/api/users/locations/</code> endpoint exposes the location of <strong>all registered users</strong> to <strong>any authenticated user</strong>. This is a major privacy issue and this endpoint must be restricted to admins only or removed.</li>
+                </ol>
+            </div>
+            <div class="alert alert-info">
+                <h4>For the AI Team</h4>
+                <p>Your primary task is to consume new raw reports and post a structured <code>CleanedReport</code> object to <code>POST /api/reports/cleaned-incidents/</code>. Please coordinate with the backend team to secure this endpoint, potentially with a dedicated API key for the AI service.</p>
+            </div>
+            <div class="alert alert-info">
+                <h4>For the Frontend Team</h4>
+                <p>The GeoJSON endpoints (<code>.../locations/</code> and <code>.../density/</code>) are designed for direct use with map libraries. Use the <code>in_bbox</code> and <code>zoom</code> parameters on every map move/zoom event to fetch only the data needed for the current view. This is critical for performance.</p>
+            </div>
+        </section>
+
+        <section id="section-auth">
+            <h2>Authentication & User Management</h2>
+
+            <div class="endpoint" id="user-register">
+                <h3>User Registration</h3>
+                <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <code>/users/register/</code>
+                </div>
+                <p>Creates a new user account. Authentication is not required.</p>
+                
+                <h4>Request Body (<code>application/json</code>)</h4>
+                <pre><code>{
+    "email": "testuser@example.com",
+    "first_name": "Test",
+    "last_name": "User",
+    "password": "strongpassword123",
+    "password2": "strongpassword123",
+    "location": {
+        "lat": 12.9716,
+        "lng": 77.5946
+    }
+}</code></pre>
+                
+                <h4>Success Response (201 Created)</h4>
+                <pre><code>{
+    "user": {
+        "email": "testuser@example.com",
+        "first_name": "Test",
+        "last_name": "User",
+        "location": {
+            "lat": 12.9716,
+            "lng": 77.5946
+        }
+    },
+    "message": "User Created Successfully. Now perform Login to get your token."
+}</code></pre>
+            </div>
+
+            <div class="endpoint" id="user-login">
+                <h3>User Login (Token Obtain)</h3>
+                <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <code>/users/login/</code>
+                </div>
+                <p>Authenticates a user and returns JWT access and refresh tokens.</p>
+                <h4>Request Body (<code>application/json</code>)</h4>
+                <pre><code>{
+    "email": "testuser@example.com",
+    "password": "strongpassword123"
+}</code></pre>
+                <h4>Success Response (200 OK)</h4>
+                <pre><code>{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}</code></pre>
+            </div>
+
+            <div class="endpoint" id="user-refresh">
+                <h3>Refresh Access Token</h3>
+                 <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <code>/users/login/refresh/</code>
+                </div>
+                <p>Obtains a new access token using a valid refresh token.</p>
+                <h4>Request Body (<code>application/json</code>)</h4>
+                <pre><code>{
+    "refresh": "&lt;your_refresh_token&gt;"
+}</code></pre>
+                <h4>Success Response (200 OK)</h4>
+                <pre><code>{
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}</code></pre>
+            </div>
+
+            <div class="endpoint" id="user-logout">
+                <h3>User Logout</h3>
+                 <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <code>/users/logout/</code>
+                </div>
+                <p>Blacklists the user's refresh token to securely log them out. Requires JWT authentication.</p>
+                <h4>Request Body (<code>application/json</code>)</h4>
+                <pre><code>{
+    "refresh": "&lt;your_refresh_token&gt;"
+}</code></pre>
+                <h4>Success Response (200 OK)</h4>
+                <pre><code>{
+    "detail": "Successfully logged out"
+}</code></pre>
+            </div>
+        </section>
+
+        <section id="section-raw-reports">
+            <h2>Raw Incident Reporting</h2>
+            <div class="endpoint" id="create-raw-report">
+                <h3>Create a Raw Report</h3>
+                <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <code>/reports/incidents/</code>
+                </div>
+                <p>Submits a new incident report. Requires JWT authentication. If <code>location</code> is omitted, the user's default location is used.</p>
+                <h4>Request Body (<code>application/json</code>)</h4>
+                <pre><code>{
+    "report": "There is severe flooding near the main market.",
+    "source": "Mobile App",
+    "location": {
+        "lat": 28.6139,
+        "lng": 77.2090
+    }
+}</code></pre>
+                <h4>Success Response (201 Created)</h4>
+                <pre><code>{
+    "id": 1,
+    "report": "There is severe flooding near the main market.",
+    "user": "testuser@example.com",
+    "is_marked": false,
+    "reported_at": "2023-10-27T10:00:00Z",
+    "location_details": {
+        "lat": 28.6139,
+        "lng": 77.2090
+    },
+    "source": "Mobile App"
+}</code></pre>
+            </div>
+            <div class="endpoint" id="list-raw-reports">
+                <h3>List User's Raw Reports</h3>
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <code>/reports/incidents/</code>
+                </div>
+                <p>Retrieves a list of all reports submitted by the currently authenticated user.</p>
+            </div>
+             <div class="endpoint" id="manage-raw-report">
+                <h3>Retrieve, Update, Delete a Raw Report</h3>
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <span class="method put">PUT/PATCH</span>
+                    <span class="method delete">DELETE</span>
+                    <code>/reports/incidents/{id}/</code>
+                </div>
+                <p>Perform retrieve, update, or delete operations on a specific report owned by the user.</p>
+            </div>
+        </section>
+        
+        <section id="section-cleaned-reports">
+            <h2>Cleaned Incident Data</h2>
+            <div class="endpoint" id="create-cleaned-report">
+                <h3>Create a Cleaned Report</h3>
+                 <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <code>/reports/cleaned-incidents/</code>
+                </div>
+                <p>Creates a new cleaned, structured report. This is the primary endpoint for the AI processing service. Requires JWT authentication.</p>
+                <h4>Request Body (<code>application/json</code>)</h4>
+                <pre><code>{
+    "original_report": 1,
+    "cleaned_text": "Severe flooding identified near the main market in Delhi.",
+    "timestamp": "2023-10-27T09:55:00Z",
+    "language": "en",
+    "hazard_type": "FLOOD",
+    "confidence": 0.95,
+    "severity": "HIGH",
+    "locations": {
+        "type": "GeometryCollection",
+        "geometries": [
+            {
+                "type": "Point",
+                "coordinates": [77.2090, 28.6139]
+            }
+        ]
+    },
+    "sentiment": "negative",
+    "urgency_score": 0.88,
+    "source": "Mobile App",
+    "verified": false
+}</code></pre>
+                <p class="note">The response will be the full created CleanedReport object as a GeoJSON Feature.</p>
+            </div>
+             <div class="endpoint" id="list-cleaned-reports">
+                <h3>List All Cleaned Reports</h3>
+                 <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <code>/reports/cleaned-incidents/</code>
+                </div>
+                <p>Retrieves a list of all cleaned reports. Requires JWT authentication. The response is an array of GeoJSON Feature objects.</p>
+            </div>
+        </section>
+        
+        <section id="section-geo">
+            <h2>Geospatial & Map Data Endpoints</h2>
+            <p class="note">These read-only endpoints are optimized for consumption by map libraries (e.g., Mapbox GL JS, Leaflet) and all return GeoJSON.</p>
+            <div class="endpoint" id="get-raw-locations">
+                <h3>Get Raw Report Locations</h3>
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <code>/reports/incidents/locations/</code>
+                </div>
+                <p>Returns raw report locations as a GeoJSON FeatureCollection. Requires JWT authentication.</p>
+                <h4>Query Parameters</h4>
+                <p><code>in_bbox=&lt;xmin&gt;,&lt;ymin&gt;,&lt;xmax&gt;,&lt;ymax&gt;</code> (e.g., <code>?in_bbox=70,15,90,30</code>) - Filters results to the visible map area.</p>
+                <h4>Success Response (200 OK)</h4>
+                <pre><code>{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [77.2090, 28.6139]
+            },
+            "properties": {
+                "id": 1,
+                "source": "Mobile App"
+            }
+        }
+    ]
+}</code></pre>
+            </div>
+
+            <div class="endpoint" id="get-cleaned-locations">
+                <h3>Get Cleaned Report Locations</h3>
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <code>/reports/cleaned-incidents/locations/</code>
+                </div>
+                <p>Returns cleaned report locations as a GeoJSON FeatureCollection. Requires JWT authentication.</p>
+                 <h4>Query Parameters</h4>
+                <p><code>in_bbox=&lt;xmin&gt;,&lt;ymin&gt;,&lt;xmax&gt;,&lt;ymax&gt;</code></p>
+                <h4>Success Response (200 OK)</h4>
+                <pre><code>{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [77.2090, 28.6139]
+            },
+            "properties": {
+                "id": 1,
+                "hazard_type": "FLOOD",
+                "severity": "HIGH",
+                "verified": false
+            }
+        }
+    ]
+}</code></pre>
+            </div>
+
+            <div class="endpoint" id="get-heatmap">
+                <h3>Get Heatmap Density Data</h3>
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <code>/reports/incidents/density/</code>
+                </div>
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <code>/reports/cleaned-incidents/density/</code>
+                </div>
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <code>/users/locations/density/</code>
+                </div>
+                <p>Returns aggregated point data for generating a heatmap. Requires JWT authentication.</p>
+                <h4>Query Parameters (Both Required)</h4>
+                <ul>
+                    <li><code>in_bbox=&lt;xmin&gt;,&lt;ymin&gt;,&lt;xmax&gt;,&lt;ymax&gt;</code></li>
+                    <li><code>zoom=&lt;level&gt;</code> (e.g., <code>?zoom=5</code>)</li>
+                </ul>
+                <h4>Success Response (200 OK)</h4>
+                <pre><code>{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [77.2, 28.6]
+            },
+            "properties": {
+                "count": 42
+            }
+        }
+    ]
+}</code></pre>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
