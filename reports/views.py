@@ -18,20 +18,13 @@ class ReportedViewSet(viewsets.ModelViewSet):
     API endpoint that allows users to create, view, edit, and delete their own reports.
     """
     serializer_class = ReportedSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
         """
-        This view should return a list of all the reports
-        for the currently authenticated user.
+        Returns all reports since there is no authenticated user.
         """
-        return Reported.objects.filter(user=self.request.user)
-
-    def perform_create(self, serializer):
-        """
-        Assign the current user to the report being created.
-        """
-        serializer.save(user=self.request.user)
+        return Reported.objects.all()
 
 
 class CleanedReportViewSet(viewsets.ModelViewSet):
@@ -42,12 +35,12 @@ class CleanedReportViewSet(viewsets.ModelViewSet):
     """
     queryset = CleanedReport.objects.all()
     serializer_class = CleanedReportSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
 
 class BaseDensityView(views.APIView):
     """Base class for heatmap density views to avoid code duplication."""
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     table_name = None
     geom_field = None
 
@@ -121,7 +114,7 @@ class ReportedLocationsView(generics.ListAPIView):
     """
     queryset = Reported.objects.filter(location__isnull=False)
     serializer_class = ReportedLocationSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     filter_backends = (InBBoxFilter,)
     bbox_filter_field = 'location'
     pagination_class = None
@@ -143,7 +136,7 @@ class CleanedReportLocationsView(generics.ListAPIView):
     """
     queryset = CleanedReport.objects.filter(locations__isnull=False)
     serializer_class = CleanedReportLocationSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     filter_backends = (InBBoxFilter,)
     bbox_filter_field = 'locations'
     pagination_class = None

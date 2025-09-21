@@ -29,7 +29,7 @@ class UserRegisterView(generics.GenericAPIView):
 
 class LogoutView(generics.GenericAPIView):
     serializer_class = LogoutSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
     def post(self, request):
         serializer = self.get_serializer(data=request.data)
@@ -49,7 +49,7 @@ class UserLocationsView(generics.ListAPIView):
     """
     queryset = User.objects.filter(location__isnull=False)
     serializer_class = UserLocationSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny] 
     
     # Use the InBBoxFilter for geospatial filtering
     filter_backends = (InBBoxFilter,)
@@ -76,7 +76,7 @@ class UserDensityView(views.APIView):
 
     - `zoom` (required): The current zoom level of the map (integer).
     """
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny] 
 
     def get_grid_size(self, zoom):
         """

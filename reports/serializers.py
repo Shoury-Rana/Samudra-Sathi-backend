@@ -5,7 +5,7 @@ from .models import Reported, CleanedReport
 
 
 class ReportedSerializer(serializers.ModelSerializer):
-    user = serializers.ReadOnlyField(source='user.email')
+    user = serializers.ReadOnlyField(source='user.email', allow_null=True)
     location = serializers.DictField(required=False, write_only=True)
     location_details = serializers.SerializerMethodField(read_only=True)
 
