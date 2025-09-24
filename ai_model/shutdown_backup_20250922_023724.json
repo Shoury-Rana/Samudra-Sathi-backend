@@ -1,0 +1,405 @@
+[
+  {
+    "text": "Heard reports of a major flood in Bhiwandi. People need help.",
+    "timestamp": "2025-09-22T02:34:15.202908",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39715370535850525,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Bhiwandi",
+        "latitude": 19.3025562,
+        "longitude": 73.0588072,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.5891461372375488,
+    "source": "API",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Vijayanagaram. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T02:34:15.306535",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.3963065445423126,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "unknown",
+        "confidence": 0.0
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48889198899269104,
+    "source": "SMS",
+    "verified": false
+  },
+  {
+    "text": "The sea is receding unusually at Berhampore. Is this a tsunami?",
+    "timestamp": "2025-09-22T02:34:16.515020",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39740505814552307,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Berhampore",
+        "latitude": 24.1044927,
+        "longitude": 88.2510635,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4892215430736542,
+    "source": "Mobile App",
+    "verified": false
+  },
+  {
+    "text": "Heard reports of a major flood in Dhule. People need help.",
+    "timestamp": "2025-09-22T02:34:16.871485",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39714670181274414,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "unknown",
+        "confidence": 0.0
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.5891440510749817,
+    "source": "API",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Ambarnath. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T02:34:17.216812",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39661604166030884,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Ambarnath",
+        "latitude": 19.2015607,
+        "longitude": 73.2004771,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4889848232269287,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "The sea is receding unusually at Mysore. Is this a tsunami?",
+    "timestamp": "2025-09-22T02:34:17.295685",
+    "language": "en",
+    "hazard_type": "king_tide",
+    "confidence": 0.3973032236099243,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "unknown",
+        "confidence": 0.0
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.3691909611225128,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Ghaziabad. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T02:34:17.650288",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.3963298499584198,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Ghaziabad",
+        "latitude": 28.7749966,
+        "longitude": 77.4586967,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48889896273612976,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "Seeing high water levels near Dharmavaram. It's rising fast!",
+    "timestamp": "2025-09-22T02:34:17.989069",
+    "language": "es",
+    "hazard_type": "king_tide",
+    "confidence": 0.39657995104789734,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "unknown",
+        "confidence": 0.0
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.3689740002155304,
+    "source": "Mobile App",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Ballia. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T02:34:18.139896",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39644452929496765,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "unknown",
+        "confidence": 0.0
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48893335461616516,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "Seeing high water levels near Nagercoil. It's rising fast!",
+    "timestamp": "2025-09-22T02:34:18.264578",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39656180143356323,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "unknown",
+        "confidence": 0.0
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48896855115890503,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Bhavnagar. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T02:35:05.416127",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39652207493782043,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Bhavnagar",
+        "latitude": 21.7718836,
+        "longitude": 72.1416449,
+        "confidence": 0.8,
+        "method": "ner"
+      },
+      {
+        "name": "Bhavnagar",
+        "latitude": 21.7718836,
+        "longitude": 72.1416449,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48895663022994995,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "The sea is receding unusually at Berhampore. Is this a tsunami?",
+    "timestamp": "2025-09-22T02:35:06.605491",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39740505814552307,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Berhampore",
+        "latitude": 24.1044927,
+        "longitude": 88.2510635,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4892215430736542,
+    "source": "Mobile App",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Ghaziabad. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T02:35:06.807152",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.3963298499584198,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Ghaziabad",
+        "latitude": 28.7749966,
+        "longitude": 77.4586967,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48889896273612976,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "Seeing high water levels near Nagercoil. It's rising fast!",
+    "timestamp": "2025-09-22T02:35:06.893155",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39656180143356323,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "unknown",
+        "confidence": 0.0
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48896855115890503,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "The ground is shaking violently in Medininagar. Possible earthquake.",
+    "timestamp": "2025-09-22T02:35:08.278551",
+    "language": "en",
+    "hazard_type": "earthquake",
+    "confidence": 0.39794126351674397,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Medininagar",
+        "latitude": 24.0397192,
+        "longitude": 84.0658109,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.5043823790550231,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "My building in Chandigarh is swaying. I think it's an earthquake!",
+    "timestamp": "2025-09-22T02:35:08.625137",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39643141627311707,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Chandigarh",
+        "latitude": 30.7334421,
+        "longitude": 76.7797143,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48892942070961,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Vijayanagaram. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T02:35:09.415173",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.3963065445423126,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "unknown",
+        "confidence": 0.0
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48889198899269104,
+    "source": "SMS",
+    "verified": false
+  },
+  {
+    "text": "Heard reports of a major flood in Medininagar. People need help.",
+    "timestamp": "2025-09-22T02:35:09.436175",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.3973265588283539,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Medininagar",
+        "latitude": 24.0397192,
+        "longitude": 84.0658109,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.5891979932785034,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Ambarnath. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T02:35:09.441168",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39661604166030884,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Ambarnath",
+        "latitude": 19.2015607,
+        "longitude": 73.2004771,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4889848232269287,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "My building in Ahmednagar is swaying. I think it's an earthquake!",
+    "timestamp": "2025-09-22T02:35:09.457151",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39657872915267944,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Ahmednagar",
+        "latitude": 19.1627725,
+        "longitude": 74.8580243,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.48897361755371094,
+    "source": "API",
+    "verified": false
+  }
+]

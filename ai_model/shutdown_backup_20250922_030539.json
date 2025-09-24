@@ -1,0 +1,296 @@
+[
+  {
+    "text": "Official Tsunami alert for Vizag coast. Evacuate immediately!",
+    "timestamp": "2025-09-22T03:02:02.049005",
+    "language": "de",
+    "hazard_type": "coastal_erosion",
+    "confidence": 0.3983209729194641,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Visakhapatnam",
+        "latitude": 17.6935526,
+        "longitude": 83.2921297,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4694962799549103,
+    "source": "API",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Vizag. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T03:02:02.059002",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39651575684547424,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Visakhapatnam",
+        "latitude": 17.6935526,
+        "longitude": 83.2921297,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4889547526836395,
+    "source": "API",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Vizag. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T03:02:02.242828",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39651575684547424,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Visakhapatnam",
+        "latitude": 17.6935526,
+        "longitude": 83.2921297,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4889547526836395,
+    "source": "SMS",
+    "verified": false
+  },
+  {
+    "text": "There is a major flood risk near the Yamuna river bank in Delhi. Water levels are rising fast.",
+    "timestamp": "2025-09-22T03:02:03.037904",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39576274156570435,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Yamuna",
+        "latitude": 27.1242347,
+        "longitude": 78.3695769,
+        "confidence": 0.8,
+        "method": "ner"
+      },
+      {
+        "name": "Delhi",
+        "latitude": 28.6328027,
+        "longitude": 77.2197713,
+        "confidence": 0.8,
+        "method": "ner"
+      },
+      {
+        "name": "Delhi",
+        "latitude": 28.6328027,
+        "longitude": 77.2197713,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4887288212776184,
+    "source": "Mobile App",
+    "verified": false
+  },
+  {
+    "text": "Sea water is rushing into the streets of Kolkata due to the storm surge.",
+    "timestamp": "2025-09-22T03:02:18.361619",
+    "language": "en",
+    "hazard_type": "water_spout",
+    "confidence": 0.3966117799282074,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Kolkata",
+        "latitude": 22.5726459,
+        "longitude": 88.3638953,
+        "confidence": 0.8,
+        "method": "ner"
+      },
+      {
+        "name": "Kolkata",
+        "latitude": 22.5726459,
+        "longitude": 88.3638953,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.36898353695869446,
+    "source": "SMS",
+    "verified": false
+  },
+  {
+    "text": "Massive waves hitting the coast at Vizag. This looks like a tsunami warning.",
+    "timestamp": "2025-09-22T03:02:19.901628",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39651575684547424,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Visakhapatnam",
+        "latitude": 17.6935526,
+        "longitude": 83.2921297,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4889547526836395,
+    "source": "API",
+    "verified": false
+  },
+  {
+    "text": "Giant waves are crashing on the shore at Kochi.",
+    "timestamp": "2025-09-22T03:02:20.747383",
+    "language": "en",
+    "hazard_type": "king_tide",
+    "confidence": 0.3968222439289093,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Kochi",
+        "latitude": 9.9679032,
+        "longitude": 76.2444378,
+        "confidence": 0.8,
+        "method": "ner"
+      },
+      {
+        "name": "Kochi",
+        "latitude": 9.9679032,
+        "longitude": 76.2444378,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.369046688079834,
+    "source": "SMS",
+    "verified": false
+  },
+  {
+    "text": "Mudslide reported in the hills above Darjeeling. Very dangerous.",
+    "timestamp": "2025-09-22T03:02:20.848603",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.3975510001182556,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Darjeeling",
+        "latitude": 27.0377554,
+        "longitude": 88.263176,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4892652928829193,
+    "source": "SMS",
+    "verified": false
+  },
+  {
+    "text": "Sea water is rushing into the streets of Mumbai due to the storm surge.",
+    "timestamp": "2025-09-22T03:02:36.751089",
+    "language": "en",
+    "hazard_type": "water_spout",
+    "confidence": 0.39642998576164246,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Mumbai",
+        "latitude": 19.054999,
+        "longitude": 72.8692035,
+        "confidence": 0.8,
+        "method": "ner"
+      },
+      {
+        "name": "Mumbai",
+        "latitude": 19.054999,
+        "longitude": 72.8692035,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.368928998708725,
+    "source": "Web",
+    "verified": false
+  },
+  {
+    "text": "Mudslide reported in the hills above Darjeeling. Very dangerous.",
+    "timestamp": "2025-09-22T03:02:37.340476",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.3975510001182556,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Darjeeling",
+        "latitude": 27.0377554,
+        "longitude": 88.263176,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4892652928829193,
+    "source": "SMS",
+    "verified": false
+  },
+  {
+    "text": "A sudden wall of water came down the valley near Joshimath.",
+    "timestamp": "2025-09-22T03:02:37.691052",
+    "language": "en",
+    "hazard_type": "flash_flood",
+    "confidence": 0.39732345938682556,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Joshimath",
+        "latitude": 30.5555752,
+        "longitude": 79.5612607,
+        "confidence": 0.8,
+        "method": "ner"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.4891970455646515,
+    "source": "SMS",
+    "verified": false
+  },
+  {
+    "text": "Sea water is rushing into the streets of Kolkata due to the storm surge.",
+    "timestamp": "2025-09-22T03:02:37.854691",
+    "language": "en",
+    "hazard_type": "water_spout",
+    "confidence": 0.3966117799282074,
+    "severity": "low",
+    "locations": [
+      {
+        "name": "Kolkata",
+        "latitude": 22.5726459,
+        "longitude": 88.3638953,
+        "confidence": 0.8,
+        "method": "ner"
+      },
+      {
+        "name": "Kolkata",
+        "latitude": 22.5726459,
+        "longitude": 88.3638953,
+        "confidence": 0.9,
+        "method": "pattern"
+      }
+    ],
+    "sentiment": "positive/informative",
+    "urgency_score": 0.36898353695869446,
+    "source": "SMS",
+    "verified": false
+  }
+]
